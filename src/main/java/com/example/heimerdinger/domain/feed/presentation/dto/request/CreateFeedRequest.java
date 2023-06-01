@@ -15,5 +15,7 @@ public class CreateFeedRequest {
 
     private String category;
 
-    private List<String> url;
+    private String url;
+
+    private String email;
 }

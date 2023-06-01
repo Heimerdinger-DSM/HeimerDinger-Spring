@@ -28,15 +28,10 @@ public class CreateFeedService {
                 .user(user)
                 .category(createFeedRequest.getCategory())
                 .content(createFeedRequest.getContent())
+                .url(createFeedRequest.getUrl())
+                .email(createFeedRequest.getEmail())
                 .build();
         feedRepository.save(feed);
 
-        for (String i : createFeedRequest.getUrl()) {
-            Image image = Image.builder()
-                    .feed(feed)
-                    .url(i)
-                    .build();
-            imageRepository.save(image);
-        }
     }
 }
