@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
-@RequestMapping("feeds/likes")
+@RequestMapping("likes/")
 @RequiredArgsConstructor
 @RestController
 public class LikeController {
