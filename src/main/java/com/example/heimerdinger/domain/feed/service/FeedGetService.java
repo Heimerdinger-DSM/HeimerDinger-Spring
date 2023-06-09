@@ -43,7 +43,7 @@ public class FeedGetService {
                             .createAt(feed.getCreateAt())
                             .name(user.getNickName())
                             .content(feed.getContent())
-                            .heartType(likeFacade.confirmHeart(user,feed))
+                            .heartType(likeFacade.confirmHeart(user, feed))
                             .accountId(user.getAccountId())
                             .build();
                     return feedResponse;

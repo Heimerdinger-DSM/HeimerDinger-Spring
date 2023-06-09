@@ -1,7 +1,6 @@
 package com.example.heimerdinger.domain.feed.service;
 
 
-
 import com.example.heimerdinger.domain.bookmark.domain.repository.BookMarkRepository;
 import com.example.heimerdinger.domain.comment.domain.repository.CommentsRepository;
 import com.example.heimerdinger.domain.feed.domain.repository.FeedRepository;
@@ -36,7 +35,6 @@ public class FeedGetDetailService {
     @Transactional(readOnly = true)
     public FeedDetailResponse.FeedGetDetailResponse execute(UUID id) {
         User user = userFacade.getCurrentUser();
-        Profile profile = profileRepository.findByUserId(user.getId()).orElseThrow(() -> ProfileNotFoundException.EXCEPTION);
         return feedRepository.findById(id)
                 .map(feed -> {
                     FeedDetailResponse.FeedGetDetailResponse feedGetDetailResponse = FeedDetailResponse.FeedGetDetailResponse.builder()
