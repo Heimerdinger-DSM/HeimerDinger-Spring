@@ -32,7 +32,6 @@ public class FeedGetService {
     @Transactional(readOnly = true)
     public FeedGetResponse execute() {
         User user = userFacade.getCurrentUser();
-        Profile profile = profileRepository.findByUserId(user.getId()).orElseThrow(() -> ProfileNotFoundException.EXCEPTION);
         List<FeedGetResponse.FeedResponse> feedResponseList = feedRepository.findAllByJoinFetch()
                 .stream()
                 .map(feed -> {
